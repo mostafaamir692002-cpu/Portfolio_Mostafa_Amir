@@ -20,10 +20,13 @@
       var problemAr = p.problem_short ? p.problem_short.ar : p.card.ar;
       var outcomeEn = p.outcome_short ? p.outcome_short.en : "";
       var outcomeAr = p.outcome_short ? p.outcome_short.ar : "";
+      var _webp = /^assets\/.+\.jpe?g$/i.test(p.previewImage) ? p.previewImage.replace(/\.jpe?g$/i, ".webp") : "";
 
       return '<article class="work-card" data-project="' + p.id + '">' +
         '<div class="wc-vis" style="position:relative;overflow:hidden;">' +
-          '<img src="' + p.previewImage + '" alt="' + p.title + '" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.75;transition:opacity .4s,transform .6s;">' +
+          (_webp ? '<picture><source type="image/webp" srcset="' + _webp + '">' : '') +
+          '<img src="' + p.previewImage + '" alt="' + p.title + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.75;transition:opacity .4s,transform .6s;">' +
+          (_webp ? '</picture>' : '') +
           '<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.55) 100%);"></div>' +
           '<div style="position:absolute;top:12px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;">' +
             '<span class="project-status-badge" style="font-size:8.5px;padding:3px 9px;border-radius:10px;letter-spacing:.12em;">● LIVE</span>' +

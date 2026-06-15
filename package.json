@@ -1,0 +1,13 @@
+{
+  "name": "portfolio_mostafa_amir",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Mostafa.OS — Portfolio V2 · Glass OS in Space. Static, no-build site (opens via file://).",
+  "scripts": {
+    "optimize:img": "node scripts/optimize-images.mjs"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

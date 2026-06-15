@@ -69,8 +69,11 @@
     var metricsTitle = isAr ? "// النتايج بالأرقام" : "// IMPACT METRICS";
     var tag = isAr ? data.tag.ar : data.tag.en;
 
+    var _webp = /^assets\/.+\.jpe?g$/i.test(data.previewImage) ? data.previewImage.replace(/\.jpe?g$/i, ".webp") : "";
     body.innerHTML = '<div class="modal-case-hero">' +
-      '<img src="' + data.previewImage + '" alt="' + data.title + ' website mockup" class="modal-preview-img" loading="lazy">' +
+      (_webp ? '<picture><source type="image/webp" srcset="' + _webp + '">' : '') +
+      '<img src="' + data.previewImage + '" alt="' + data.title + ' website mockup" class="modal-preview-img" loading="lazy" decoding="async">' +
+      (_webp ? '</picture>' : '') +
     '</div>' +
     '<div class="modal-header-hero">' +
       '<div class="modal-hero-glyph ' + data.glyphClass + '">' +
