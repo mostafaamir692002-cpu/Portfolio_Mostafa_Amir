@@ -204,10 +204,19 @@
       renderer.render(scene, camera);
     }
 
+    /* Frame budget: cap at 60fps desktop / 30fps mobile. Animation is time-based
+       (clock.getElapsedTime), so fewer frames never changes motion speed — it only
+       saves GPU/battery (notably on 120Hz and mobile). 60Hz desktop looks identical. */
+    var FRAME_MS = MOS.MOBILE ? 1000 / 30 : 1000 / 60;
+    var lastFrame = 0;
     function loop() {
       render();
-      rafId = requestAnimationFrame(function frame() {
-        render();
+      lastFrame = performance.now();
+      rafId = requestAnimationFrame(function frame(now) {
+        if (now - lastFrame >= FRAME_MS) {
+          render();
+          lastFrame = now - ((now - lastFrame) % FRAME_MS);
+        }
         if (active && !document.hidden) rafId = requestAnimationFrame(frame);
         else rafId = null;
       });

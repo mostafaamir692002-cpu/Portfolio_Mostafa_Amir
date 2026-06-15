@@ -188,9 +188,12 @@
 
     /* ---- 3D tilt on cards (calm: ±3.5deg) ---- */
     if (!MOS.REDUCE && MOS.FINE) {
-      MOS.$$(".work-card", track).forEach(function (card) {
+      var tiltCards = MOS.$$(".work-card", track);
+      tiltCards.forEach(function (card) {
+        /* cache the rect on enter (and lazily) instead of measuring every mousemove */
+        card.addEventListener("mouseenter", function () { card._rect = card.getBoundingClientRect(); });
         card.addEventListener("mousemove", function (e) {
-          var rect = card.getBoundingClientRect();
+          var rect = card._rect || (card._rect = card.getBoundingClientRect());
           var dx = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
           var dy = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
           var rx = (dy * -3.5).toFixed(2), ry = (dx * 3.5).toFixed(2);
@@ -201,10 +204,15 @@
           }
         });
         card.addEventListener("mouseleave", function () {
+          card._rect = null;
           if (MOS.hasGSAP()) window.gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6, ease: "power2.out" });
           else card.style.transform = "none";
         });
       });
+      /* a cached rect goes stale when the page scrolls or resizes */
+      function invalidateTiltRects() { tiltCards.forEach(function (c) { c._rect = null; }); }
+      window.addEventListener("scroll", invalidateTiltRects, { passive: true });
+      window.addEventListener("resize", invalidateTiltRects, { passive: true });
     }
   });
 })(window.MOS = window.MOS || {});
