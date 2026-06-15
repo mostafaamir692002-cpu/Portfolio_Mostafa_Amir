@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="theme-color" content="#070709" />
-<title>Mostafa Amir — System / Portfolio</title>
-<meta name="description" content="Mostafa Amir — AI Systems Architect, Brand Builder & Creative Technologist. A portfolio built like an operating system." />
+<title>Mostafa Amir — Brand · Commerce · Operations Systems Architect</title>
+<meta name="description" content="Mostafa Amir — Brand Systems, Commerce Infrastructure & Operations Architecture. Building the systems behind brands that scale." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1093,6 +1093,81 @@ body.mode-wireframe .toggle.on .st {
   .os-modal-window { height: 90vh; }
   .os-modal-body { padding: 20px; }
 }
+
+/* ============ AMBIENT ORB MOTION ============ */
+.bg-field::before{animation:orbFloat1 16s ease-in-out infinite}
+.bg-field::after{animation:orbFloat2 22s ease-in-out infinite}
+@keyframes orbFloat1{
+  0%,100%{transform:translate(0,0) scale(1)}
+  28%{transform:translate(4vw,-3.5vw) scale(1.08)}
+  64%{transform:translate(-2.5vw,4vw) scale(.93)}
+}
+@keyframes orbFloat2{
+  0%,100%{transform:translate(0,0) scale(1)}
+  38%{transform:translate(-5vw,2.5vw) scale(1.06)}
+  72%{transform:translate(3.5vw,-4vw) scale(.97)}
+}
+@media(prefers-reduced-motion:reduce){
+  .bg-field::before,.bg-field::after{animation:none!important}
+}
+
+/* ============ SCROLL PROGRESS ============ */
+#scrollProgress{
+  position:fixed;top:0;left:0;height:2px;width:0;z-index:99999;
+  background:linear-gradient(90deg,var(--blue),var(--glow) 50%,var(--purple));
+  border-radius:0 1px 1px 0;pointer-events:none;
+}
+
+/* ============ CUSTOM CURSOR ============ */
+.cursor-dot{
+  position:fixed;width:7px;height:7px;background:rgba(255,255,255,.9);
+  border-radius:50%;pointer-events:none;z-index:99998;
+  transform:translate(-50%,-50%);display:none;
+  mix-blend-mode:difference;will-change:left,top;
+}
+.cursor-aura{
+  position:fixed;width:36px;height:36px;
+  border:1px solid rgba(90,169,255,.5);border-radius:50%;
+  pointer-events:none;z-index:99997;transform:translate(-50%,-50%);display:none;
+  transition:width .4s var(--spring),height .4s var(--spring),border-color .3s,opacity .3s;
+  will-change:left,top;
+}
+@media(pointer:fine){
+  .cursor-dot,.cursor-aura{display:block}
+  *{cursor:none!important}
+}
+
+/* ============ WORK TRACK DRAG ============ */
+.work-track-wrap{cursor:grab!important}
+.work-track-wrap.is-dragging{cursor:grabbing!important;user-select:none}
+.work-track-wrap.is-dragging .work-card{pointer-events:none}
+
+/* ============ MOBILE MENU ============ */
+.mobile-menu {
+  position: fixed; top: 108px; left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  width: calc(100% - 24px); max-width: 400px;
+  z-index: 108; padding: 14px; border-radius: 22px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .35s var(--ease), transform .35s var(--ease);
+  display: none;
+}
+@media(max-width:720px){ .mobile-menu { display: block; } }
+.mobile-menu.is-open { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.mobile-menu-links { display: flex; flex-direction: column; gap: 4px; }
+.mobile-nav-link {
+  display: block; padding: 14px 16px; border-radius: 12px;
+  font-size: 15px; font-weight: 500; color: var(--ink-1);
+  text-decoration: none; transition: color .2s, background .2s;
+}
+.mobile-nav-link:hover { color: var(--ink-0); background: rgba(255,255,255,.05); }
+.mobile-menu-cta {
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.mobile-menu-cta .dock-cta { width: 100%; justify-content: center; }
+body.light-mode .mobile-nav-link { color: var(--ink-1) !important; }
+body.light-mode .mobile-nav-link:hover { color: var(--ink-0) !important; background: rgba(15,16,21,.04) !important; }
 </style>
 </head>
 <body>
@@ -1134,8 +1209,8 @@ body.mode-wireframe .toggle.on .st {
   <div class="dock-brand">
     <div class="dock-mono"><img src="mostafa-amir.jpg" alt="Mostafa Amir"></div>
     <div>
-      <span class="lang-en">Mostafa Amir<small>Systems · Brand · AI</small></span>
-      <span class="lang-ar">مصطفى أمير<small>أنظمة · هوية · ذكاء</small></span>
+      <span class="lang-en">Mostafa Amir<small>Brand · Commerce · Operations</small></span>
+      <span class="lang-ar">مصطفى أمير<small>العلامة · التجارة · العمليات</small></span>
     </div>
   </div>
   <div class="dock-links">
@@ -1171,7 +1246,7 @@ body.mode-wireframe .toggle.on .st {
     <div class="hero-window" data-reveal data-parallax-root>
       <div class="win-chrome">
         <div class="win-dots"><i></i><i></i><i></i></div>
-        <div class="win-pill">portfolio.system · live</div>
+        <div class="win-pill">systems.architect · live</div>
         <div class="win-tools"><span></span><span></span><span></span></div>
       </div>
 
@@ -1183,7 +1258,7 @@ body.mode-wireframe .toggle.on .st {
               <div class="avatar"><img src="mostafa-amir.jpg" alt="Mostafa Amir"><span class="ring-dot"></span></div>
               <div>
                 <h3>Mostafa Amir</h3>
-                <div class="role">Founder · Systems Architect</div>
+                <div class="role">Brand · Commerce · Operations Architect</div>
               </div>
             </div>
             <div class="profile-meta">
@@ -1215,28 +1290,28 @@ body.mode-wireframe .toggle.on .st {
               <button class="toggle on" data-c="ai" aria-pressed="true" aria-label="Toggle AI Specular Parallax Interaction">
                 <span class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m13.5-6.5-2 2m-7 7-2 2m13 0-2-2m-7-7-2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg></span>
                 <span>
-                  <span class="lbl"><span class="lang-en">AI Systems</span><span class="lang-ar">أنظمة الذكاء</span></span><br>
+                  <span class="lbl"><span class="lang-en">Brand Systems</span><span class="lang-ar">أنظمة العلامة</span></span><br>
                   <span class="st"><span class="lang-en">Active</span><span class="lang-ar">نشط</span></span>
                 </span>
               </button>
               <button class="toggle on" data-c="design" aria-pressed="true" aria-label="Toggle Wireframe Design Mode">
-                <span class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 19a7 7 0 1 1 7-7c0 2-1.5 2.5-3 2.5s-2 1-1.5 2.5S13 19 12 19Z" stroke="currentColor" stroke-width="1.5"/><circle cx="8.5" cy="10" r="1" fill="currentColor"/><circle cx="12" cy="8" r="1" fill="currentColor"/></svg></span>
+                <span class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 2h12l4 10-10 10L2 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg></span>
                 <span>
-                  <span class="lbl"><span class="lang-en">Design</span><span class="lang-ar">التصميم</span></span><br>
+                  <span class="lbl"><span class="lang-en">Commerce Ops</span><span class="lang-ar">عمليات التجارة</span></span><br>
                   <span class="st"><span class="lang-en">Active</span><span class="lang-ar">نشط</span></span>
                 </span>
               </button>
               <button class="toggle on" data-c="auto" aria-pressed="true" aria-label="Toggle Automation System Log overlay">
                 <span class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v3m0 14v3m10-10h-3M5 12H2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m18 6-2 2M8 16l-2 2m12 0-2-2M8 8 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
                 <span>
-                  <span class="lbl"><span class="lang-en">Automation</span><span class="lang-ar">الأتمتة</span></span><br>
+                  <span class="lbl"><span class="lang-en">AI Automation</span><span class="lang-ar">أتمتة الذكاء</span></span><br>
                   <span class="st"><span class="lang-en">Active</span><span class="lang-ar">نشط</span></span>
                 </span>
               </button>
               <button class="toggle" data-c="sys" aria-pressed="false" aria-label="Toggle Core Diagnostics Modal">
                 <span class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span>
                 <span>
-                  <span class="lbl"><span class="lang-en">Systems</span><span class="lang-ar">الأنظمة</span></span><br>
+                  <span class="lbl"><span class="lang-en">Architecture</span><span class="lang-ar">هندسة النظام</span></span><br>
                   <span class="st"><span class="lang-en">Standby</span><span class="lang-ar">استعداد</span></span>
                 </span>
               </button>
@@ -1247,8 +1322,8 @@ body.mode-wireframe .toggle.on .st {
         <!-- CENTER CORE -->
         <div class="hero-core" data-px="0.15">
           <div class="hero-eyebrow">
-            <span class="lang-en">// AI Systems Architect — Creative Technologist</span>
-            <span class="lang-ar">// مهندس أنظمة ذكاء اصطناعي — تقني إبداعي</span>
+            <span class="lang-en">// Brand · Commerce · Operations Systems Architect</span>
+            <span class="lang-ar">// مهندس أنظمة · العلامة · التجارة · العمليات</span>
           </div>
           <div class="monogram-disc" data-px="0.7"><img src="mostafa-amir.jpg" alt="Mostafa Amir"></div>
           <h1 class="hero-title">
@@ -1270,8 +1345,8 @@ body.mode-wireframe .toggle.on .st {
             </div>
           </h1>
           <p class="hero-sub">
-            <span class="lang-en">Hi, I'm Mostafa. I build digital products, brand identities, and AI integrations. I focus on clean code, thoughtful interface details, and building systems that perform well under load.</span>
-            <span class="lang-ar" style="font-family:'Noto Sans Arabic'; font-size:15.5px; direction:rtl; text-align:center; line-height:1.75; display:block;">أهلاً، أنا مصطفى. أصمم وأبني المنتجات الرقمية، الهويات البصرية، وأنظمة الذكاء الاصطناعي. أهتم بالتفاصيل البرمجية النظيفة، هندسة واجهات الاستخدام الهادئة، وتصميم بنيات برمجية تتحمل الضغط.</span>
+            <span class="lang-en">I architect the infrastructure behind brands that scale — brand systems, commerce operations, and AI-powered workflows. From identity to checkout to back-office automation: one coherent system, not a stack of deliverables.</span>
+            <span class="lang-ar" style="font-family:'Noto Sans Arabic'; font-size:15.5px; direction:rtl; text-align:center; line-height:1.75; display:block;">أهندس البنية التحتية للعلامات التجارية التي تتوسع — أنظمة الهوية، عمليات التجارة الإلكترونية، وتدفقات العمل المدعومة بالذكاء الاصطناعي. من الهوية إلى الدفع إلى الأتمتة الخلفية: نظام متماسك واحد، لا حزمة مهام متفرقة.</span>
           </p>
         </div>
 
@@ -1298,7 +1373,7 @@ body.mode-wireframe .toggle.on .st {
                   <span class="lang-en">Projects shipped</span>
                   <span class="lang-ar">مشاريع مكتملة</span>
                 </span>
-                <span class="v">40+</span>
+                <span class="v" data-count="40" data-suffix="+">40+</span>
               </div>
               <div class="bar"><i data-bar="86"></i></div>
               <div class="row">
@@ -1306,7 +1381,7 @@ body.mode-wireframe .toggle.on .st {
                   <span class="lang-en">Years building</span>
                   <span class="lang-ar">سنوات الخبرة</span>
                 </span>
-                <span class="v">6</span>
+                <span class="v" data-count="6" data-suffix="">6</span>
               </div>
               <div class="bar"><i data-bar="70"></i></div>
               <div class="row">
@@ -1314,7 +1389,7 @@ body.mode-wireframe .toggle.on .st {
                   <span class="lang-en">Systems live</span>
                   <span class="lang-ar">أنظمة نشطة</span>
                 </span>
-                <span class="v">12</span>
+                <span class="v" data-count="12" data-suffix="">12</span>
               </div>
               <div class="bar"><i data-bar="60"></i></div>
             </div>
@@ -1324,9 +1399,9 @@ body.mode-wireframe .toggle.on .st {
 
       <!-- decorative control strips -->
       <div class="hero-strips" data-px="0.25">
-        <div class="vstrip metal"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 18V6m0 0-4 4m4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><i style="height:64%"></i><span class="lab">Focus</span></div>
-        <div class="vstrip metal"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v2m0 14v2m9-9h-2M5 12H3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><i style="height:82%"></i><span class="lab">Craft</span></div>
-        <div class="vstrip metal"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M5 8h14M5 16h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><i style="height:48%"></i><span class="lab">Scope</span></div>
+        <div class="vstrip metal"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 18V6m0 0-4 4m4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><i style="height:72%"></i><span class="lab">Brand</span></div>
+        <div class="vstrip metal"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v2m0 14v2m9-9h-2M5 12H3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><i style="height:88%"></i><span class="lab">Commerce</span></div>
+        <div class="vstrip metal"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M5 8h14M5 16h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><i style="height:55%"></i><span class="lab">AI Ops</span></div>
       </div>
     </div>
   </section>
@@ -1339,53 +1414,54 @@ body.mode-wireframe .toggle.on .st {
         <span class="lang-ar">أوضاع التشغيل</span>
       </span>
       <h2>
-        <span class="lang-en">Five disciplines,<br>one system.</span>
-        <span class="lang-ar">خمسة تخصصات،<br>نظام تشغيل واحد.</span>
+        <span class="lang-en">Five pillars,<br>one system.</span>
+        <span class="lang-ar">خمسة محاور،<br>نظام تشغيل واحد.</span>
       </h2>
-      <p class="lang-en">I don't think in deliverables — I think in systems. Switch a mode to see how the same operator shows up across the stack.</p>
-      <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">لا أفكر في المهام المتباعدة، بل في الأنظمة المتكاملة. غير وضع التشغيل لترى كيف يعمل نفس المهندس عبر الطبقات التقنية المختلفة.</p>
+      <p class="lang-en">Brand, commerce, and operations are not separate engagements — they're layers of the same system. Switch a mode to see how they connect.</p>
+      <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">العلامة التجارية والتجارة والعمليات ليست مشاريع منفصلة — بل طبقات من نظام واحد. غيّر الوضع لترى كيف تتصل هذه الطبقات ببعضها.</p>
     </div>
     <div class="glass modebar" data-reveal>
       <button class="mode active" data-mode="0">
         <div class="n">01</div>
         <div class="t">
-          <span class="lang-en">STRATEGY</span>
-          <span class="lang-ar">الاستراتيجية</span>
+          <span class="lang-en">BRAND</span>
+          <span class="lang-ar">العلامة</span>
         </div>
       </button>
       <button class="mode" data-mode="1">
         <div class="n">02</div>
         <div class="t">
-          <span class="lang-en">IDENTITY</span>
-          <span class="lang-ar">الهوية البصرية</span>
+          <span class="lang-en">COMMERCE</span>
+          <span class="lang-ar">التجارة</span>
         </div>
       </button>
       <button class="mode" data-mode="2">
         <div class="n">03</div>
         <div class="t">
-          <span class="lang-en">PRODUCT</span>
-          <span class="lang-ar">المنتجات</span>
+          <span class="lang-en">OPERATIONS</span>
+          <span class="lang-ar">العمليات</span>
         </div>
       </button>
       <button class="mode" data-mode="3">
         <div class="n">04</div>
         <div class="t">
-          <span class="lang-en">AUTOMATION</span>
-          <span class="lang-ar">الأتمتة</span>
+          <span class="lang-en">AI WORKFLOWS</span>
+          <span class="lang-ar">تدفق الذكاء</span>
         </div>
       </button>
       <button class="mode" data-mode="4">
         <div class="n">05</div>
         <div class="t">
-          <span class="lang-en">GROWTH</span>
-          <span class="lang-ar">النمو</span>
+          <span class="lang-en">STRATEGY</span>
+          <span class="lang-ar">الاستراتيجية</span>
         </div>
       </button>
     </div>
     <div class="glass mode-readout" data-reveal>
       <div class="desc">
-        <h4 id="modeTitle">Brand & Business Strategy</h4>
-        <p id="modeDesc">Positioning, narrative, and the decisions underneath the visuals. I find the wedge that makes a brand impossible to copy.</p>
+        <h4 id="modeTitle">Brand Architecture & Identity</h4>
+        <p id="modeDesc">I build brand systems that function like software — modular, scalable, and consistent across every touchpoint. Strategy, identity, and tone as a unified design system.</p>
+        <p id="modeAr" style="font-family:'Noto Sans Arabic';direction:rtl;text-align:right;color:var(--ink-1);margin-top:10px;font-size:14.5px;line-height:1.85;display:none"></p>
       </div>
       <div class="meterset" id="modeMeters"></div>
     </div>
@@ -1413,73 +1489,73 @@ body.mode-wireframe .toggle.on .st {
     <div class="work-track-wrap" data-reveal>
       <div class="work-track" id="workTrack">
         <article class="work-card">
-          <div class="wc-vis wc-1"><span class="glyph chrome-text">A</span></div>
+          <div class="wc-vis wc-1"><span class="glyph chrome-text">M</span></div>
+          <div class="wc-body">
+            <div class="tag">
+              <span class="lang-en">Brand System · Digital Platform</span>
+              <span class="lang-ar">نظام الهوية · منصة رقمية</span>
+            </div>
+            <h3>MEDIEVAL ALOUD</h3>
+            <p class="lang-en">Full brand architecture and digital platform for a cultural project preserving medieval Arabic music — identity to infrastructure.</p>
+            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">نظام هوية بصرية متكامل ومنصة رقمية لمشروع ثقافي يوثق التراث الموسيقي العربي القديم.</p>
+            <div class="wc-meta lang-en"><span>Brand</span><span>Identity</span><span>Platform</span></div>
+            <div class="wc-meta lang-ar"><span>العلامة</span><span>الهوية</span><span>المنصة</span></div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="wc-vis wc-2"><span class="glyph chrome-text">U</span></div>
+          <div class="wc-body">
+            <div class="tag">
+              <span class="lang-en">Brand Identity · Commerce System</span>
+              <span class="lang-ar">هوية العلامة · نظام التجارة</span>
+            </div>
+            <h3>UNITED</h3>
+            <p class="lang-en">End-to-end brand and commerce system for a fashion label. Visual architecture wired directly into the commerce infrastructure.</p>
+            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">نظام هوية وتجارة متكامل لعلامة في قطاع الأزياء — من البنية البصرية إلى التجارة الإلكترونية.</p>
+            <div class="wc-meta lang-en"><span>Brand Strategy</span><span>Identity</span><span>Shopify</span></div>
+            <div class="wc-meta lang-ar"><span>الاستراتيجية</span><span>الهوية</span><span>شوبيفاي</span></div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="wc-vis wc-3"><span class="glyph chrome-text">R</span></div>
           <div class="wc-body">
             <div class="tag">
               <span class="lang-en">E-Commerce · Brand System</span>
               <span class="lang-ar">تجارة إلكترونية · نظام الهوية</span>
             </div>
-            <h3>AURUM</h3>
-            <p class="lang-en">A luxury commerce experience — identity, Shopify architecture, and a checkout that feels like a concierge.</p>
-            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">تجربة تجارة فاخرة — الهوية البصرية، وهندسة شوبيفاي، وعملية دفع مريحة وسلسة.</p>
-            <div class="wc-meta lang-en"><span>Shopify</span><span>Brand</span><span>UX</span></div>
-            <div class="wc-meta lang-ar"><span>شوبيفاي</span><span>العلامة</span><span>المستخدم</span></div>
+            <h3>ROYAL SEA</h3>
+            <p class="lang-en">Brand identity and Shopify commerce system for a premium maritime brand — checkout architecture, product systems, and operational back-end.</p>
+            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">هوية بصرية ونظام تجارة إلكترونية على شوبيفاي لعلامة بحرية فاخرة — من التصميم إلى عمليات الدفع والمخزون.</p>
+            <div class="wc-meta lang-en"><span>Shopify</span><span>Brand</span><span>Commerce Ops</span></div>
+            <div class="wc-meta lang-ar"><span>شوبيفاي</span><span>العلامة</span><span>العمليات</span></div>
           </div>
         </article>
         <article class="work-card">
-          <div class="wc-vis wc-2"><span class="glyph chrome-text">N</span></div>
+          <div class="wc-vis wc-4"><span class="glyph chrome-text">F</span></div>
           <div class="wc-body">
             <div class="tag">
-              <span class="lang-en">AI · Automation Platform</span>
-              <span class="lang-ar">ذكاء اصطناعي · منصة أتمتة</span>
+              <span class="lang-en">Commerce · Operations System</span>
+              <span class="lang-ar">التجارة · نظام العمليات</span>
             </div>
-            <h3>NEURAL FLOW</h3>
-            <p class="lang-en">An AI workflow engine that turns messy ops into one calm, observable pipeline. Agents, not dashboards.</p>
-            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">محرك أتمتة الذكاء الاصطناعي الذي ينظم العمليات الخلفية لتدفق واحد هادئ وقابل للمراقبة.</p>
-            <div class="wc-meta lang-en"><span>AI Agents</span><span>Systems</span><span>Ops</span></div>
-            <div class="wc-meta lang-ar"><span>وكلاء الذكاء</span><span>الأنظمة</span><span>التشغيل</span></div>
+            <h3>FISHMONGER</h3>
+            <p class="lang-en">Commerce architecture and operations system for a fresh seafood brand — store, inventory workflows, and fulfillment automation connected end-to-end.</p>
+            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">بنية تجارية ونظام عمليات لعلامة أسماك طازجة — متجر وأتمتة المخزون والتوريد من البداية للنهاية.</p>
+            <div class="wc-meta lang-en"><span>Commerce</span><span>Operations</span><span>Automation</span></div>
+            <div class="wc-meta lang-ar"><span>التجارة</span><span>العمليات</span><span>الأتمتة</span></div>
           </div>
         </article>
         <article class="work-card">
-          <div class="wc-vis wc-3"><span class="glyph chrome-text">V</span></div>
+          <div class="wc-vis wc-5"><span class="glyph chrome-text">P</span></div>
           <div class="wc-body">
             <div class="tag">
-              <span class="lang-en">Product · Health Tech</span>
-              <span class="lang-ar">منتجات · صحة رقمية</span>
+              <span class="lang-en">Brand · Identity · E-Commerce</span>
+              <span class="lang-ar">العلامة · الهوية · التجارة</span>
             </div>
-            <h3>VITALIS</h3>
-            <p class="lang-en">A wellness product with a quiet interface — habit systems designed to disappear into daily life.</p>
-            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">منتج وقاية صحية بواجهة استخدام هادئة — نظام عادات يومية يندمج ويختفي بسلام في الروتين.</p>
-            <div class="wc-meta lang-en"><span>Product</span><span>UX/UI</span><span>Design System</span></div>
-            <div class="wc-meta lang-ar"><span>المنتج</span><span>التجربة والواجهات</span><span>نظام التصميم</span></div>
-          </div>
-        </article>
-        <article class="work-card">
-          <div class="wc-vis wc-4"><span class="glyph chrome-text">M</span></div>
-          <div class="wc-body">
-            <div class="tag">
-              <span class="lang-en">SaaS · Design System</span>
-              <span class="lang-ar">منصات SaaS · نظام التصميم</span>
-            </div>
-            <h3>MERIDIAN</h3>
-            <p class="lang-en">A scalable design language and component system for a B2B platform — consistency without rigidity.</p>
-            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">لغة تصميم متكاملة ونظام مكونات برمجي لمنصات B2B — الاتساق والسرعة دون جمود.</p>
-            <div class="wc-meta lang-en"><span>Design System</span><span>SaaS</span><span>Tokens</span></div>
-            <div class="wc-meta lang-ar"><span>نظام التصميم</span><span>المنصات</span><span>المتغيرات</span></div>
-          </div>
-        </article>
-        <article class="work-card">
-          <div class="wc-vis wc-5"><span class="glyph chrome-text">F</span></div>
-          <div class="wc-body">
-            <div class="tag">
-              <span class="lang-en">Identity · Creative Studio</span>
-              <span class="lang-ar">الهوية البصرية · ستوديو إبداعي</span>
-            </div>
-            <h3>FORM & SIGNAL</h3>
-            <p class="lang-en">A studio identity built on motion — a logo system that behaves like software, not a static mark.</p>
-            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">هوية تجارية مبنية على الحركة — نظام شعار يتصرف كبرمجية حية متفاعلة وليس مجرد رسمة.</p>
-            <div class="wc-meta lang-en"><span>Identity</span><span>Motion</span><span>Art Direction</span></div>
-            <div class="wc-meta lang-ar"><span>الهوية</span><span>الحركة</span><span>التوجيه الفني</span></div>
+            <h3>PANTOUFLA</h3>
+            <p class="lang-en">Brand system and commerce platform for a premium footwear label — visual identity that communicates luxury, paired with a Shopify store built for discovery and conversion.</p>
+            <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">نظام هوية ومنصة تجارة لعلامة أحذية فاخرة — هوية بصرية راقية مع متجر شوبيفاي مُهندَس للتصفح والتحويل.</p>
+            <div class="wc-meta lang-en"><span>Brand System</span><span>Identity</span><span>Shopify</span></div>
+            <div class="wc-meta lang-ar"><span>نظام العلامة</span><span>الهوية</span><span>شوبيفاي</span></div>
           </div>
         </article>
       </div>
@@ -1503,18 +1579,18 @@ body.mode-wireframe .toggle.on .st {
         <span class="lang-ar">نبذة شخصية</span>
       </span>
       <div class="lang-ar">
-        <p style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right; font-size:17px; line-height:1.95; color:var(--ink-1); margin-bottom:14px;">أقضي وقتي في تطوير العمليات الخلفية، تصميم واجهات الاستخدام، وهندسة متاجر Shopify. أحب دمج التخطيط البرمجي، التصميم، وتطوير الواجهات لبناء برمجيات متكاملة وموثوقة.</p>
-        <p style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right; font-size:15px; line-height:1.8; color:var(--ink-2); margin-bottom:14px;">أهتم بالعمل على المشاريع من بدايتها حتى النهاية، مع التأكد من أن كل عنصر في الواجهة يخدم غرضاً واضحاً للمستخدم النهائي ويسهل التعامل معه.</p>
+        <p style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right; font-size:17px; line-height:1.95; color:var(--ink-1); margin-bottom:14px;">أبني البنية التحتية للعلامات التجارية التي تتوسع. ذلك يعني أنظمة هوية تستطيع فرق العمل فعلاً استخدامها، ومتاجر شوبيفاي مُهندَسة لتحقيق الإيرادات، وتدفقات عمل تشغيلية لا تحتاج تدخلاً يدوياً للقرارات الروتينية.</p>
+        <p style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right; font-size:15px; line-height:1.8; color:var(--ink-2); margin-bottom:14px;">أعمل من البداية للنهاية — من قرار التموضع الأول حتى آخر خطوة أتمتة — لأن الأجزاء لا تعمل إلا حين يُصمَّم النظام بالكامل معاً.</p>
       </div>
       <div class="lang-en">
-        <p>I spend my time engineering backend workflows, designing user interfaces, and structuring clean Shopify stores. I like bringing strategy, design, and frontend code together to build things that feel complete and work reliably.</p>
-        <p>I focus on building projects end-to-end, making sure every interface element serves a clear purpose for the end user and is easy to interact with.</p>
+        <p>I build the infrastructure behind brands that operate at scale. That means brand systems that teams can actually use, Shopify stores engineered for revenue, and operations workflows that don't require a human in the loop for routine decisions.</p>
+        <p>I work end-to-end — from the first positioning decision to the last automation trigger — because the parts only work when the whole system is designed together.</p>
       </div>
       <div class="about-tags lang-en">
-        <span>AI Systems</span><span>Brand Strategy</span><span>UX / UI Direction</span><span>Automation</span><span>Shopify / E-com</span><span>Product Thinking</span>
+        <span>Brand Systems</span><span>Commerce Infrastructure</span><span>Operations Architecture</span><span>AI Workflows</span><span>Shopify</span><span>Business Strategy</span>
       </div>
       <div class="about-tags lang-ar">
-        <span>أنظمة الذكاء</span><span>استراتيجية الهوية</span><span>تجربة المستخدم</span><span>الأتمتة</span><span>متاجر شوبيفاي</span><span>التفكير في المنتج</span>
+        <span>أنظمة العلامة</span><span>بنية التجارة</span><span>هندسة العمليات</span><span>تدفق الذكاء الاصطناعي</span><span>شوبيفاي</span><span>استراتيجية الأعمال</span>
       </div>
     </div>
   </section>
@@ -1535,34 +1611,34 @@ body.mode-wireframe .toggle.on .st {
     </div>
     <div class="sys-grid">
       <div class="glass sys-card" data-reveal data-d="1">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
         <div class="num">01</div>
         <h4>
-          <span class="lang-en">Systems first</span>
-          <span class="lang-ar">الأنظمة أولاً</span>
+          <span class="lang-en">Architecture before execution</span>
+          <span class="lang-ar">الهندسة قبل التنفيذ</span>
         </h4>
-        <p class="lang-en">I look at the whole stack before writing code. A product works best when its database, UI, and business logic are designed together.</p>
-        <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">أنظر للبنية بالكامل قبل كتابة الكود. يعمل المنتج بأفضل شكل عندما يتم تصميم قواعد البيانات، الواجهات، والمنطق البرمجي معاً.</p>
+        <p class="lang-en">Every engagement starts with a systems map. Brand touchpoints, commerce flows, and operational logic are designed together before anything is built — because coherence comes from the architecture, not the polish.</p>
+        <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">كل مشروع يبدأ بخريطة نظام. نقاط العلامة، تدفقات التجارة، ومنطق العمليات تُصمَّم معاً قبل بناء أي شيء — لأن الاتساق يأتي من الهندسة، لا من التلميع.</p>
       </div>
       <div class="glass sys-card" data-reveal data-d="2">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8.5 4.5-1 8-3.5 8-8.5V7l-8-4Z" stroke="currentColor" stroke-width="1.5"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="num">02</div>
         <h4>
-          <span class="lang-en">Detail focused</span>
-          <span class="lang-ar">التركيز على التفاصيل</span>
+          <span class="lang-en">Infrastructure that scales</span>
+          <span class="lang-ar">بنية تحتية قابلة للتوسع</span>
         </h4>
-        <p class="lang-en">I care about small visual details — spacing, typography, and micro-interactions. The goal is to make interfaces feel smooth and simple.</p>
-        <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">أهتم بالتفاصيل البصرية الصغيرة — المسافات، الخطوط، والحركات البسيطة. الهدف هو جعل واجهة الاستخدام تبدو سلسة وبسيطة.</p>
+        <p class="lang-en">I build things that don't break when the business grows. Whether it's a Shopify store handling 10× volume or a brand system used by a 20-person team — the architecture anticipates scale from day one.</p>
+        <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">أبني أنظمة لا تنهار حين يكبر العمل. سواء كان متجر شوبيفاي يستوعب عشرة أضعاف الحجم أو نظام هوية يستخدمه فريق من 20 شخصاً — الهيكل يستوعب التوسع من اليوم الأول.</p>
       </div>
       <div class="glass sys-card" data-reveal data-d="3">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 18V9m5 9V5m5 13v-6m5 6V8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="12" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="5" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 12h5M14 12h3M12 7v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <div class="num">03</div>
         <h4>
-          <span class="lang-en">Maintainable code</span>
-          <span class="lang-ar">أكواد قابلة للصيانة</span>
+          <span class="lang-en">Integrated, not siloed</span>
+          <span class="lang-ar">متكامل لا معزول</span>
         </h4>
-        <p class="lang-en">I write modular code and reusable design systems. Everything I ship is documented and easy to maintain or scale.</p>
-        <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">أكتب كوداً برمجياً مرناً وأنظمة تصميم قابلة لإعادة الاستخدام. كل ما أنتجه يتم توثيقه وتسهيل صيانته وتوسيعه مستقبلاً.</p>
+        <p class="lang-en">Brand, commerce, and operations are one system — not three separate projects. I connect them at the strategy level, in the tools, and in the workflows, so the business runs as a unit rather than a collection of handoffs.</p>
+        <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:right;">العلامة والتجارة والعمليات نظام واحد — لا ثلاثة مشاريع منفصلة. أربطها على مستوى الاستراتيجية والأدوات وتدفقات العمل، حتى يعمل العمل كوحدة متماسكة.</p>
       </div>
     </div>
   </section>
@@ -1575,11 +1651,11 @@ body.mode-wireframe .toggle.on .st {
         <span class="lang-ar">تواصل معي</span>
       </span>
       <h2 class="chrome-text">
-        <span class="lang-en">Let's connect.</span>
-        <span class="lang-ar">دعنا نتواصل.</span>
+        <span class="lang-en">Let's build something that runs.</span>
+        <span class="lang-ar">لنبنِ شيئاً يعمل.</span>
       </h2>
-      <p class="lang-en">Interested in discussing a project or looking at code? Feel free to reach out. I enjoy collaborating on challenging technical problems.</p>
-      <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:center;">هل ترغب في مناقشة مشروع برمجى أو مراجعة أكواد؟ تواصل معي في أي وقت. أحب التعاون لحل المشكلات البرمجية والتصميمية الصعبة.</p>
+      <p class="lang-en">If you're building a brand, scaling a commerce operation, or need someone to architect the systems underneath — let's talk about what you're trying to run, not just what you're trying to build.</p>
+      <p class="lang-ar" style="font-family:'Noto Sans Arabic'; direction:rtl; text-align:center;">إن كنت تبني علامة تجارية، أو تطوّر عملية تجارية، أو تحتاج شخصاً يهندس الأنظمة في العمق — تحدث معي عما تريد تشغيله، لا عما تريد بناءه فحسب.</p>
       
       <div class="channels">
         <a class="channel" href="mailto:mostafaamir692002@gmail.com">
@@ -1599,8 +1675,8 @@ body.mode-wireframe .toggle.on .st {
         </a>
       </div>
       <a class="contact-cta" href="mailto:mostafaamir692002@gmail.com">
-        <span class="lang-en">Start a conversation</span>
-        <span class="lang-ar">ابدأ محادثة الآن</span>
+        <span class="lang-en">Start a project</span>
+        <span class="lang-ar">ابدأ مشروعك الآن</span>
         <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-7 7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -1625,6 +1701,22 @@ body.mode-wireframe .toggle.on .st {
     </div>
     <div class="home-ind"><i></i></div>
   </footer>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu glass" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <nav class="mobile-menu-links">
+    <a href="#work" class="mobile-nav-link"><span class="lang-en">Work</span><span class="lang-ar">أعمالي</span></a>
+    <a href="#about" class="mobile-nav-link"><span class="lang-en">About</span><span class="lang-ar">عني</span></a>
+    <a href="#systems" class="mobile-nav-link"><span class="lang-en">Systems</span><span class="lang-ar">الأنظمة</span></a>
+    <a href="#modes" class="mobile-nav-link"><span class="lang-en">Disciplines</span><span class="lang-ar">التخصصات</span></a>
+  </nav>
+  <div class="mobile-menu-cta">
+    <a href="#contact" class="dock-cta" style="display:inline-flex;align-items:center;gap:6px;width:100%;justify-content:center;">
+      <span class="lang-en">Start a project</span><span class="lang-ar">ابدأ مشروعك</span>
+      <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
 </div>
 
 <!-- SYSTEM CONSOLE LOG OVERLAY (Automation CC Toggle) -->
@@ -1654,6 +1746,10 @@ body.mode-wireframe .toggle.on .st {
   </div>
 </div>
 
+<div id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-aura" id="cursorAura"></div>
+
 <!-- ============ LIBS ============ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -1665,6 +1761,27 @@ body.mode-wireframe .toggle.on .st {
   var REDUCE = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var hasGSAP = typeof window.gsap !== "undefined";
   var hasLenis = typeof window.Lenis !== "undefined";
+
+  /* ---------- character scramble ---------- */
+  function scrambleText(el, finalText, dur){
+    if(!el || REDUCE){ el.textContent = finalText; return; }
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&";
+    var total = Math.max(24, Math.round(dur / 16));
+    var f = 0;
+    (function tick(){
+      f++;
+      var prog = f / total;
+      var revealed = Math.floor(prog * finalText.length);
+      var out = "";
+      for(var i = 0; i < finalText.length; i++){
+        if(i < revealed || finalText[i] === " ") out += finalText[i];
+        else out += chars[Math.floor(Math.random() * chars.length)];
+      }
+      el.textContent = out;
+      if(prog < 1) requestAnimationFrame(tick);
+      else el.textContent = finalText;
+    })();
+  }
 
   /* ---------- live clock ---------- */
   function pad(n){return (n<10?"0":"")+n;}
@@ -1702,8 +1819,28 @@ body.mode-wireframe .toggle.on .st {
   if(REDUCE || !boot){
     if(boot) boot.classList.add("done");
     document.body.classList.remove("is-locked");
-    // reveal everything immediately
     setTimeout(function(){ heroIntro(); }, 30);
+  } else if(hasGSAP) {
+    var bootLabel = boot ? boot.querySelector(".boot-label") : null;
+    var bootStages = ["Initializing systems...", "Loading brand stack...", "Ready."];
+    var stageIdx = 0;
+    var stageTimer = setInterval(function(){
+      stageIdx++;
+      if(stageIdx < bootStages.length && bootLabel){
+        gsap.fromTo(bootLabel,{opacity:0,y:4},{opacity:1,y:0,duration:.3});
+        bootLabel.textContent = bootStages[stageIdx];
+      } else { clearInterval(stageTimer); }
+    }, 750);
+    var bootObj = {p:0};
+    gsap.to(bootObj, {
+      p: 100, duration: 2.1, ease: "power2.inOut",
+      onUpdate: function(){
+        var v = Math.round(bootObj.p);
+        if(bootBar) bootBar.style.width = v + "%";
+        if(bootPct) bootPct.textContent = v + "%";
+      },
+      onComplete: function(){ clearInterval(stageTimer); setTimeout(finishBoot, 300); }
+    });
   } else {
     var bi = setInterval(function(){
       p += Math.random()*16 + 6;
@@ -1789,6 +1926,34 @@ body.mode-wireframe .toggle.on .st {
     } else { fillBars(document); }
   }
 
+  /* ---------- counter animation ---------- */
+  function animateCounter(el){
+    if(REDUCE || el.dataset._counted) return;
+    el.dataset._counted = "1";
+    var target = parseInt(el.getAttribute("data-count") || "0", 10);
+    var suffix = el.getAttribute("data-suffix") || "";
+    var duration = 1400;
+    var start = null;
+    (function tick(ts){
+      if(!start) start = ts;
+      var prog = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - prog, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if(prog < 1) requestAnimationFrame(tick);
+    })(performance.now());
+  }
+  if("IntersectionObserver" in window){
+    var counterObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.querySelectorAll("[data-count]").forEach(animateCounter);
+          counterObs.unobserve(en.target);
+        }
+      });
+    },{threshold:0.3});
+    document.querySelectorAll(".w-stat").forEach(function(s){ counterObs.observe(s); });
+  }
+
   /* ---------- hero intro (loader-gated) ---------- */
   function heroIntro(){
     if(heroIntro._done) return; heroIntro._done = true;
@@ -1803,9 +1968,16 @@ body.mode-wireframe .toggle.on .st {
       tl.to(".hero-eyebrow",{opacity:1,duration:.6},0.1)
         .from(".monogram-disc",{scale:.6,opacity:0,duration:.9,ease:"back.out(1.6)"},0.15)
         .to(".hero-title .word-i",{y:"0%",duration:1,ease:"power4.out",stagger:.12},0.3)
-        .to(".hero-sub",{opacity:1,duration:.7},0.7);
+        .to(".hero-sub",{opacity:1,duration:.7},0.7)
+      .call(function(){
+        var words = document.querySelectorAll(".hero-title .word-i");
+        words.forEach(function(w, i){
+          var txt = w.textContent;
+          setTimeout(function(){ scrambleText(w, txt, 850); }, i * 200);
+        });
+      }, [], 1.4);
       fillBars(document);
-      setTimeout(playSelection, 1600);
+      setTimeout(playSelection, 1800);
     } catch(e) {
       console.warn("GSAP heroIntro timeline failed, falling back", e);
       revealFallback();
@@ -1914,7 +2086,7 @@ body.mode-wireframe .toggle.on .st {
     return '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="fill:rgba(255,210,100,0.15);color:var(--orange);"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
   }
 
-  // Real-time Cairo Weather Integration
+  // Real-time Cairo Weather Integration (with sessionStorage cache, 30-min TTL)
   function fetchLiveWeather() {
     function setWeatherUI(temp, desc, isNight) {
       var loc = document.querySelector(".w-clock .loc");
@@ -1922,7 +2094,15 @@ body.mode-wireframe .toggle.on .st {
       var icon = getWeatherIcon(desc, isNight);
       loc.innerHTML = icon + ' Cairo · ' + temp + '°C ' + desc;
     }
-
+    var CACHE_KEY = "mostafa-weather";
+    var CACHE_TTL = 30 * 60 * 1000;
+    try {
+      var cached = JSON.parse(sessionStorage.getItem(CACHE_KEY) || "null");
+      if (cached && (Date.now() - cached.ts) < CACHE_TTL) {
+        setWeatherUI(cached.temp, cached.desc, cached.isNight);
+        return;
+      }
+    } catch(e){}
     fetch("https://wttr.in/Cairo?format=j1")
       .then(function(res) { return res.json(); })
       .then(function(data) {
@@ -1930,15 +2110,13 @@ body.mode-wireframe .toggle.on .st {
         var desc = data.current_condition[0].weatherDesc[0].value;
         var hours = new Date().getHours();
         var isNight = hours < 6 || hours > 18;
+        try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({temp:temp, desc:desc, isNight:isNight, ts:Date.now()})); } catch(e){}
         setWeatherUI(temp, desc, isNight);
       })
-      .catch(function(err) {
-        console.log("Weather offline or blocked, running fallback");
+      .catch(function() {
         var hours = new Date().getHours();
         var isNight = hours < 6 || hours > 18;
-        var temp = isNight ? "18" : "26";
-        var desc = isNight ? "Clear" : "Sunny";
-        setWeatherUI(temp, desc, isNight);
+        setWeatherUI(isNight ? "18" : "27", isNight ? "Clear" : "Sunny", isNight);
       });
   }
   fetchLiveWeather();
@@ -2090,73 +2268,73 @@ body.mode-wireframe .toggle.on .st {
 
   // Projects Rich Content Database
   var PROJECTS_DB = {
-    "AURUM": {
-       tag: "Shopify Store · Custom Liquid",
-       title: "AURUM Jewelry Commerce",
-       glyph: "A",
-       glyphClass: "wc-1",
-       techs: ["Shopify", "Liquid", "Art Direction", "UX Architect"],
-       arDesc: "متجر تجارة إلكترونية تم بناؤه لعلامة مجوهرات خاصة. قمت بتصميم العناصر البصرية وتطوير قالب Shopify Liquid نظيف. تم تحسين مسارات الدفع والتصفح لتقليل زمن الاستجابة وسرعة التحميل.",
-       enDesc: "An e-commerce store built for a boutique jewelry brand. I designed the visual assets and structured a clean Shopify Liquid theme. The checkout and navigation paths were optimized for faster response times.",
-       stats: [
-         { lbl: "CONVERSION INCREASE", val: "+34%", desc: "Direct sales improvement post-redesign" },
-         { lbl: "PAGE SPEED SCORE", val: "98/100", desc: "Top-tier performance loading speed" }
-       ],
-       link: "mailto:mostafaamir692002@gmail.com"
-    },
-    "NEURAL FLOW": {
-       tag: "Backend Scripts · Automation Engine",
-       title: "NEURAL FLOW automation",
-       glyph: "N",
-       glyphClass: "wc-2",
-       techs: ["AI Agents", "Python", "React", "Workflow Automation"],
-       arDesc: "محرك سكربتات مخصص لربط الخدمات الخلفية وتشغيل التحديثات التلقائية المجدولة. يقوم بمعالجة حزم بيانات الـ API وتسجيل حالات تشغيل خوادم الخلفية في لوحة مراقبة مركزية.",
-       enDesc: "A custom scripting engine that connects backend services and runs automated scheduled updates. It processes API payloads and logs runtime state in a central dashboard.",
-       stats: [
-         { lbl: "MAN-HOURS SAVED", val: "140h/mo", desc: "Average time savings per workflow client" },
-         { lbl: "ACCURACY RATE", val: "99.4%", desc: "Autonomous agent execution accuracy" }
-       ],
-       link: "mailto:mostafaamir692002@gmail.com"
-    },
-    "VITALIS": {
-       tag: "UI Design · Front-end Prototype",
-       title: "VITALIS Habit System",
-       glyph: "V",
-       glyphClass: "wc-3",
-       techs: ["Product", "UX/UI", "Design System", "iOS Craft"],
-       arDesc: "نموذج واجهة مستخدم مبسط لتطبيق تتبع العادات اليومية. ركزت فيه على وضوح الخطوط، حركات انتقال الصفحات السلسة، وتصميم جداول قاعدة بيانات منظمة لحفظ السجلات.",
-       enDesc: "A simple user interface prototype for a habit tracking web app. Focused on clear typography, fluid page transitions, and structured database schemas for log entries.",
-       stats: [
-         { lbl: "USER RETENTION", val: "68%", desc: "Outstanding continuous retention rate after 90 days" },
-         { lbl: "DESIGN TOKENS", val: "1.2k", desc: "Unified design variables supporting dark & light mode" }
-       ],
-       link: "mailto:mostafaamir692002@gmail.com"
-    },
-    "MERIDIAN": {
-       tag: "CSS Variables · Design Tokens",
-       title: "MERIDIAN Tokens",
+    "MEDIEVAL ALOUD": {
+       tag: "Brand System · Digital Platform",
+       title: "Medieval Aloud",
        glyph: "M",
-       glyphClass: "wc-4",
-       techs: ["Design System", "Figma", "SaaS Scale", "Design Tokens"],
-       arDesc: "مكتبة منظمة لمتغيرات CSS، تعريفات الخطوط، وإرشادات المكونات لتطبيق B2B. تم بناؤه لضمان توحيد سماكة الحدود، قيم الألوان، وعناصر الإدخال والتحقق.",
-       enDesc: "A structured repository of CSS variables, typography definitions, and component guidelines for a B2B app. Built to ensure consistent border widths, color values, and input elements.",
+       glyphClass: "wc-1",
+       techs: ["Brand Architecture", "Identity System", "Digital Platform", "Art Direction"],
+       arDesc: "نظام هوية بصرية متكامل ومنصة رقمية لمشروع ثقافي يوثق التراث الموسيقي العربي القديم. صممت البنية البصرية الكاملة — من لغة التصميم إلى البنية التحتية الرقمية — لتعكس عمق التراث بلغة بصرية حديثة.",
+       enDesc: "Full brand architecture and digital platform for a cultural project dedicated to medieval Arabic music. Designed the complete visual language — from identity system to digital infrastructure — bridging historical depth with contemporary craft.",
        stats: [
-         { lbl: "DEV SPEEDUP", val: "2.5x", desc: "Acceleration in frontend component implementation" },
-         { lbl: "COMPONENTS SHIPPED", val: "350+", desc: "Fully coded accessible atomic components" }
+         { lbl: "BRAND TOUCHPOINTS", val: "40+", desc: "Across digital and print channels" },
+         { lbl: "SYSTEM COMPONENTS", val: "120+", desc: "Modular brand components delivered" }
        ],
        link: "mailto:mostafaamir692002@gmail.com"
     },
-    "FORM & SIGNAL": {
-       tag: "Interactive Motion · SVG Graphics",
-       title: "FORM & SIGNAL SVG",
-       glyph: "F",
-       glyphClass: "wc-5",
-       techs: ["Identity", "Motion Design", "Art Direction", "Web3 Craft"],
-       arDesc: "مشروع استكشافي يركز على حركات الـ SVG التفاعلية وتأثيرات الفلاتر الخاصة بها. يتغير رسم الشعار ويتعدل شكله بناءً على إحداثيات مؤشر الماوس وحركة التمرير.",
-       enDesc: "A creative project exploring interactive SVG animations and SVG filter effects. The logo mark redraws itself based on mouse coordinates and scroll triggers.",
+    "UNITED": {
+       tag: "Brand Identity · Commerce System",
+       title: "UNITED",
+       glyph: "U",
+       glyphClass: "wc-2",
+       techs: ["Brand Strategy", "Identity System", "Shopify", "Commerce Architecture"],
+       arDesc: "نظام هوية وتجارة متكامل لعلامة تجارية في قطاع الأزياء. صممت البنية البصرية الكاملة وربطتها بمنظومة التجارة الإلكترونية — من الهوية حتى الدفع — لضمان تجربة متسقة عبر كل نقطة تواصل.",
+       enDesc: "End-to-end brand and commerce system for a fashion label. Designed the complete visual architecture and wired it directly to the commerce infrastructure — identity through checkout — for a consistent experience across every touchpoint.",
        stats: [
-         { lbl: "VISUAL ASSETS", val: "1.8k", desc: "Dynamic media and art assets delivered to team" },
-         { lbl: "BRAND REACH", val: "+2.4M", desc: "Impressions generated across digital channels" }
+         { lbl: "BRAND SYSTEM COMPONENTS", val: "200+", desc: "Consistent across all digital channels" },
+         { lbl: "STORE PERFORMANCE", val: "Top 10%", desc: "Shopify speed benchmark post-launch" }
+       ],
+       link: "mailto:mostafaamir692002@gmail.com"
+    },
+    "ROYAL SEA": {
+       tag: "E-Commerce · Brand System",
+       title: "Royal Sea",
+       glyph: "R",
+       glyphClass: "wc-3",
+       techs: ["Shopify", "Brand Identity", "Commerce Ops", "UX Architecture"],
+       arDesc: "نظام هوية بصرية وتجارة إلكترونية متكامل لعلامة بحرية فاخرة. هندست بنية متجر شوبيفاي مع تحسين مسارات الشراء، أنظمة المنتجات، والعمليات الخلفية لضمان تجربة تجارية سلسة وعالية الأداء.",
+       enDesc: "A full brand and commerce system for a premium maritime label. Engineered the Shopify store architecture — checkout flows, product systems, and operational back-end — alongside the visual identity that communicates the brand's premium positioning.",
+       stats: [
+         { lbl: "CONVERSION RATE", val: "+41%", desc: "Post-launch vs. previous store" },
+         { lbl: "PAGE SPEED SCORE", val: "96/100", desc: "Lighthouse performance benchmark" }
+       ],
+       link: "mailto:mostafaamir692002@gmail.com"
+    },
+    "FISHMONGER": {
+       tag: "Commerce · Operations System",
+       title: "Fishmonger",
+       glyph: "F",
+       glyphClass: "wc-4",
+       techs: ["Commerce Architecture", "Operations Design", "Shopify", "Workflow Automation"],
+       arDesc: "نظام تشغيلي وتجاري متكامل لعلامة أسماك طازجة. هندست بنية المتجر الإلكتروني وأنظمة المخزون وتدفقات العمل التشغيلية التي تربط التوريد بالتوصيل — أتمتة كاملة للعمليات الروتينية.",
+       enDesc: "A commerce and operations system for a fresh seafood brand. Engineered the store architecture, inventory management systems, and the operational workflows connecting sourcing to fulfillment — automating the routine so the team focuses on quality.",
+       stats: [
+         { lbl: "OPS TIME SAVED", val: "60h/mo", desc: "Through automated order workflows" },
+         { lbl: "ORDER ACCURACY", val: "99.1%", desc: "Post-automation fulfillment rate" }
+       ],
+       link: "mailto:mostafaamir692002@gmail.com"
+    },
+    "PANTOUFLA": {
+       tag: "Brand · Identity · E-Commerce",
+       title: "Pantoufla",
+       glyph: "P",
+       glyphClass: "wc-5",
+       techs: ["Brand System", "Visual Identity", "Shopify", "Product UX"],
+       arDesc: "نظام هوية بصرية ومنصة تجارة إلكترونية لعلامة أحذية منزلية فاخرة. بنيت نظاماً بصرياً يعكس الجودة والأناقة، ومتجر شوبيفاي مُهندَس للتصفح السهل والتحويل العالي.",
+       enDesc: "A brand system and commerce platform for a premium footwear label. Built a visual identity system communicating luxury and craft, paired with a Shopify store engineered for effortless discovery and high-intent conversion.",
+       stats: [
+         { lbl: "BRAND IDENTITY ASSETS", val: "80+", desc: "Across digital, packaging, and retail" },
+         { lbl: "AVG ORDER VALUE", val: "+28%", desc: "Increase post brand system launch" }
        ],
        link: "mailto:mostafaamir692002@gmail.com"
     }
@@ -2282,26 +2460,26 @@ body.mode-wireframe .toggle.on .st {
 
   /* ---------- disciplines / mode selector ---------- */
   var MODES = [
-    { t:"Strategy & Planning",
-      d:"Working out the product direction and positioning before diving into layout. Understanding what makes a product useful.",
-      ar:"التخطيط والاستراتيجية: العمل على تحديد اتجاه المنتج وتموضعه قبل البدء في كتابة الأكواد. فهم ما يجعل المنتج مفيداً وسهل الاستخدام.",
-      m:[["Planning",92],["Analysis",88],["Positioning",84]] },
-    { t:"Visual Systems",
-      d:"Crafting colors, typography, and motion guidelines. Creating clean and consistent visual languages across interfaces.",
-      ar:"الأنظمة البصرية: تصميم أنظمة الألوان، الخطوط، وإرشادات الحركة. بناء لغة بصرية نظيفة ومتناسقة عبر كامل واجهات المنتجات.",
-      m:[["Typography",90],["Visual hierarchy",95],["Consistency",89]] },
-    { t:"Product Design & Front-end",
-      d:"Building interface layouts that are intuitive and easy to browse. I prioritize clear navigation and interactive states.",
-      ar:"تصميم المنتجات والواجهات: بناء واجهات استخدام بديهية وسهلة التصفح. أهتم بتسهيل التنقل والتفاعل السلس داخل التطبيق.",
-      m:[["UI layouts",91],["Front-end craft",93],["Usability",87]] },
-    { t:"Workflows & Automations",
-      d:"Building tools and AI helper agents to handle repetitive tasks. Making background systems reliable and self-healing.",
-      ar:"الأتمتة وسير العمل: بناء الأدوات ومساعدي الذكاء الاصطناعي للتعامل مع المهام المتكررة. جعل الأنظمة الخلفية موثوقة وتلقائية العمل.",
-      m:[["Integrations",90],["Node scripts",94],["Reliability",86]] },
-    { t:"Shopify & Performance",
-      d:"Custom Shopify architectures, performance tuning, and optimizing loading speed to ensure smooth user sessions.",
-      ar:"شوبيفاي وتحسين الأداء: بناء متاجر شوبيفاي مخصصة، تحسين سرعة تحميل الصفحات لضمان تجربة مستخدم سريعة وخالية من العقبات.",
-      m:[["Liquid code",88],["Performance",92],["Optimizations",85]] }
+    { t:"Brand Architecture & Identity",
+      d:"I build brand systems that function like software — modular, scalable, and consistent across every touchpoint. Strategy, identity, and tone as a unified design system.",
+      ar:"أبني أنظمة هوية بصرية تعمل كبرمجيات — قابلة للتوسع، متناسقة، وتغطي كل نقطة تواصل. الاستراتيجية والهوية والأسلوب كنظام تصميم موحد واحد.",
+      m:[["Brand Strategy",92],["Identity Systems",95],["Visual Language",90]] },
+    { t:"Shopify Commerce Infrastructure",
+      d:"End-to-end commerce architecture: Liquid themes, checkout flows, product systems, and storefront performance. Every store is a revenue engine, not a template.",
+      ar:"هندسة تجارة إلكترونية متكاملة: قوالب Liquid، مسارات الدفع، أنظمة المنتجات، وأداء الواجهة الأمامية. كل متجر هو محرك إيرادات، وليس مجرد قالب.",
+      m:[["Shopify Architecture",94],["Commerce UX",91],["Performance",92]] },
+    { t:"Business Operations & Workflows",
+      d:"I map, restructure, and automate the operational backbone of a business — from fulfillment logic to team workflows to reporting pipelines.",
+      ar:"أخطط وأعيد هيكلة العمود الفقري التشغيلي للأعمال — من منطق التنفيذ إلى سير العمل الفرقي إلى مسارات التقارير.",
+      m:[["Operations Design",88],["Workflow Systems",90],["Process Logic",86]] },
+    { t:"AI-Powered Automation",
+      d:"Custom AI agents and workflow engines that eliminate repetitive operations. Integrations that make your systems talk to each other without manual handoffs.",
+      ar:"وكلاء ذكاء اصطناعي ومحركات سير عمل مخصصة تلغي العمليات المتكررة. تكاملات تجعل أنظمتك تتواصل مع بعضها دون تدخل يدوي.",
+      m:[["AI Agents",90],["Automation Flows",94],["Integration",88]] },
+    { t:"Business Strategy & Positioning",
+      d:"Positioning, pricing architecture, and go-to-market systems. The thinking that makes the brand and the product coherent before a single pixel is designed.",
+      ar:"التموضع، هيكلة التسعير، وأنظمة الوصول للسوق. التفكير الذي يجعل العلامة التجارية والمنتج متماسكَين قبل تصميم أي شيء.",
+      m:[["Positioning",92],["Market Strategy",88],["Systems Thinking",94]] }
   ];
   var modeTitle=document.getElementById("modeTitle"),
       modeDesc=document.getElementById("modeDesc"),
@@ -2320,9 +2498,11 @@ body.mode-wireframe .toggle.on .st {
   }
   function setMode(i){
     var m=MODES[i]; if(!m) return;
+    var lang = document.documentElement.getAttribute("lang") || "en";
+    var isAr = lang === "ar";
     if(modeTitle) modeTitle.textContent=m.t;
-    if(modeDesc) modeDesc.textContent=m.d;
-    if(modeAr) modeAr.textContent=m.ar;
+    if(modeDesc){ modeDesc.textContent=m.d; modeDesc.style.display=isAr?"none":"block"; }
+    if(modeAr){ modeAr.textContent=m.ar; modeAr.style.display=isAr?"block":"none"; }
     renderMeters(m.m);
     if(hasGSAP && !REDUCE){
       gsap.fromTo("#modeTitle, #modeDesc, #modeAr",{opacity:0,y:10},{opacity:1,y:0,duration:.5,stagger:.05,ease:"power2.out"});
@@ -2416,9 +2596,29 @@ body.mode-wireframe .toggle.on .st {
     });
   }
 
-  /* ---------- burger (mobile) → jump to contact ---------- */
+  /* ---------- burger (mobile) → slide-down menu ---------- */
   var burger=document.getElementById("burger");
-  if(burger){ burger.addEventListener("click", function(){ var c=document.getElementById("contact"); if(c){ if(lenis) lenis.scrollTo(c,{offset:-60}); else c.scrollIntoView({behavior:"smooth"}); } }); }
+  var mobileMenu=document.getElementById("mobileMenu");
+  var menuOpen=false;
+  function closeMobileMenu(){
+    menuOpen=false;
+    if(mobileMenu) mobileMenu.classList.remove("is-open");
+  }
+  if(burger){
+    burger.addEventListener("click",function(e){
+      e.stopPropagation();
+      menuOpen=!menuOpen;
+      if(mobileMenu) mobileMenu.classList.toggle("is-open",menuOpen);
+    });
+  }
+  document.addEventListener("click",function(e){
+    if(menuOpen && mobileMenu && !mobileMenu.contains(e.target) && e.target!==burger) closeMobileMenu();
+  });
+  if(mobileMenu){
+    mobileMenu.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click",function(){ closeMobileMenu(); });
+    });
+  }
 
   /* ---------- 3D Tilt Interaction for Project Cards ---------- */
   function init3DTilt() {
@@ -2433,8 +2633,8 @@ body.mode-wireframe .toggle.on .st {
         var dx = (x - xc) / xc;
         var dy = (y - yc) / yc;
         
-        var rx = (dy * -8).toFixed(2);
-        var ry = (dx * 8).toFixed(2);
+        var rx = (dy * -3.5).toFixed(2);
+        var ry = (dx * 3.5).toFixed(2);
         
         if (hasGSAP) {
           gsap.to(card, {
@@ -2511,7 +2711,7 @@ body.mode-wireframe .toggle.on .st {
       });
     });
 
-    // Update disciplines texts dynamically
+    // Update disciplines texts dynamically (also syncs modeAr visibility)
     if (typeof setMode === "function") {
       var activeModeBtn = document.querySelector(".mode.active");
       if (activeModeBtn) {
