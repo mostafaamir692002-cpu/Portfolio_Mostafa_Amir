@@ -44,5 +44,6 @@
       });
     });
     renderMeters(MOS.data.MODES[0].m);
+    setMode(0);
   });
 })(window.MOS = window.MOS || {});
