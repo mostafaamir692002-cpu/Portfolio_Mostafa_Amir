@@ -19,15 +19,15 @@
       status: { en: "Live", ar: "مشروع حي" },
       previewImage: "https://royal-sea-eg.com/cdn/shop/files/ChatGPT_Image_Jun_3_2026_09_47_12_PM.png?v=1780512456&width=1200",
       problem_short: {
-        en: "How do you sell premium seafood online when standard storefronts feel cheap?",
+        en: "How do you sell high-end seafood online without the store itself feeling cheap?",
         ar: "إزاي تبيع مأكولات بحرية فاخرة وقوالب المتاجر التقليدية بتبان رخيصة؟"
       },
       outcome_short: {
-        en: "A bilingual commerce system — 38 SKUs, full AR/EN localization, zero friction checkout.",
+        en: "A bilingual store: 38 products, full Arabic and English, and a checkout that stays out of the way.",
         ar: "نظام تجارة كامل بلغتين — ٣٨ منتج، تعريب شامل، وتجربة دفع بدون أي عقبات."
       },
       card: {
-        en: "Bilingual Shopify commerce system for a premium seafood brand — 38-product catalog engineered, translated, and QA'd end-to-end.",
+        en: "A bilingual Shopify store for a high-end seafood brand — 38 products, built, translated, and tested across Arabic and English.",
         ar: "نظام تجارة إلكترونية كامل على شوبيفاي بلغتين لبراند مأكولات بحرية فاخر — كتالوج ٣٨ منتج اتبنى واتراجع من الأول للآخر."
       },
       meta: {
@@ -98,15 +98,15 @@
       status: { en: "Live", ar: "مشروع حي" },
       previewImage: "https://medieval-aloud.com/cdn/shop/files/ChatGPT_Image_May_24_2026_06_48_23_PM.png?v=1779637738&width=1200",
       problem_short: {
-        en: "A luxury oud & musk brand with zero search visibility in the Gulf — and copy that sounded generic.",
+        en: "A luxury oud and musk brand nobody could find in Gulf search — with product copy that read generic.",
         ar: "دار عطور عود ومسك فاخرة بدون ظهور في محركات البحث الخليجية — ونصوص بتبان عادية."
       },
       outcome_short: {
-        en: "Full brand voice overhaul, Gulf-market SEO architecture, and a storefront that feels like a boutique.",
+        en: "Rewrote the brand voice, built SEO around how the Gulf actually searches, and gave it a storefront that reads like a boutique.",
         ar: "إعادة صياغة كاملة لنبرة البراند، بنية SEO خليجية، ومتجر يحس بنفسه محل عطور فاخر."
       },
       card: {
-        en: "Premium fragrance house (Oud & Musk) Shopify system with full Arabic localization, premium copy, and Gulf-market SEO architecture.",
+        en: "A Shopify store for an oud and musk house — full Arabic localization, brand copy rewritten, and SEO built for the Gulf market.",
         ar: "نظام تجارة لدار عطور عربية فاخرة (العود والمسك) على شوبيفاي بتعريب كامل، وصياغة راقية، وبنية SEO مظبوطة للسوق الخليجي."
       },
       meta: {
@@ -177,15 +177,15 @@
       status: { en: "Live", ar: "مشروع حي" },
       previewImage: "https://www.seafood-mood.com/cdn/shop/files/5_9b25aaa5-430f-430c-a9e5-2630fd9e93a0.png?v=1774365601&width=1200",
       problem_short: {
-        en: "Fresh seafood inventory changes daily — static carts cause order failures and delivery chaos.",
+        en: "Fresh seafood stock changes by the day — and a static cart turns that into failed orders and delivery chaos.",
         ar: "مخزون الأسماك الطازجة بيتغير يومياً — السلة التقليدية بتسبب فشل في الطلبات وفوضى في التوصيل."
       },
       outcome_short: {
-        en: "A dynamic commerce engine — live inventory sync, automated WhatsApp tracking, and 100% digital order flow.",
+        en: "A store that tracks stock live, sends order updates over WhatsApp, and keeps the whole order flow digital.",
         ar: "محرك تجارة ديناميكي — مزامنة مخزون حية، متابعة واتساب أوتوماتيكية، وعمليات طلبات ١٠٠% رقمية."
       },
       card: {
-        en: "Dynamic commerce platform for fresh catch ordering — inventory workflows, live pricing, and fulfillment logic connected end-to-end.",
+        en: "A seafood store built around stock that changes daily — live availability, live pricing, and fulfillment connected from cart to delivery.",
         ar: "منصة تجارة ديناميكية لطلب الأسماك الطازجة — تدفقات المخزون، الأسعار الحية، ومنطق التوريد متصلين من الأول للآخر."
       },
       meta: {
@@ -256,15 +256,15 @@
       status: { en: "Live", ar: "مشروع حي" },
       previewImage: "assets/united_preview.jpg",
       problem_short: {
-        en: "A B2B produce supplier running wholesale on WhatsApp and phone calls — invoice errors, expired stock, zero visibility.",
+        en: "A B2B produce supplier running wholesale over WhatsApp and phone calls — wrong invoices, expired stock, and no real visibility.",
         ar: "مورد جملة بيدير طلباته على الواتساب والتليفون — أخطاء فواتير، منتجات تالفة، وصفر رؤية."
       },
       outcome_short: {
-        en: "Digitized the full supply chain — contract pricing portal, auto-PDF invoicing, warehouse packing manifests.",
+        en: "Took the whole supply chain digital: a contract-pricing portal, automatic PDF invoices, and warehouse packing lists.",
         ar: "رقمنة كاملة لسلسلة التوريد — بوابة أسعار العقود، فواتير PDF أوتوماتيكية، وقوائم تعبئة المخازن."
       },
       card: {
-        en: "Comprehensive B2B commerce and operations system for a fresh produce supplier — automating ordering, invoicing, and supply chain logistics.",
+        en: "A B2B ordering and operations system for a fresh-produce supplier — ordering, invoicing, and warehouse logistics in one place.",
         ar: "نظام عمليات وتجارة B2B متكامل لمورد حاصلات زراعية طازجة — أتمتة الطلبات، الفواتير، ولوجستيات سلاسل التوريد."
       },
       meta: {
@@ -335,16 +335,16 @@
       status: { en: "Live", ar: "مشروع حي" },
       previewImage: "assets/pantoufla_preview.jpg",
       problem_short: {
-        en: "A Cairo family brand launching from zero — no digital identity, no storefront, no strategy.",
-        ar: "براند عائلي قاهري بيبدأ من الصفر — بدون هوية رقمية، بدون متجر، بدون استراتيجية."
+        en: "A Cairo footwear brand starting from zero — no identity, no store, no plan.",
+        ar: "براند أحذية قاهري بيبدأ من الصفر — بدون هوية، بدون متجر، بدون خطة."
       },
       outcome_short: {
-        en: "Full brand identity, Shopify store, and bilingual product catalog built end-to-end in 6 weeks.",
+        en: "Brand identity, a Shopify store, and a bilingual catalog — all built in six weeks.",
         ar: "هوية براند كاملة، متجر شوبيفاي، وكتالوج بلغتين من الأول للآخر في ٦ أسابيع."
       },
       card: {
-        en: "Ground-up brand and commerce build for a Cairo-based family lifestyle label — identity, catalog, and go-to-market strategy delivered as one system.",
-        ar: "بناء براند ومتجر من الصفر لبراند لايف ستايل عائلي قاهري — هوية، كتالوج، واستراتيجية إطلاق في نظام واحد."
+        en: "A from-scratch brand and store for a Cairo slippers and casual-footwear label — identity, catalog, and launch handled together.",
+        ar: "بناء براند ومتجر من الصفر لبراند شباشب وأحذية كاجوال قاهري — هوية، كتالوج، وإطلاق في نظام واحد."
       },
       meta: {
         en: ["Brand Identity", "Commerce Launch", "Go-to-Market"],
