@@ -412,3 +412,28 @@
 
 /* ---- Testimonial star color in light mode ---- */
 body.light-mode .test-stars { color: var(--orange); }
+
+/* ---- Client reviews shown as real proof (screenshots + video) ---- */
+.proof-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+}
+.testimonial-card.review-proof { padding: 10px; gap: 0; flex: 0 1 330px; }
+.testimonial-card.review-proof::before { display: none; }
+.review-proof img,
+.review-proof video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+.testimonial-card.review-video { flex: 0 1 300px; }
+.review-video video { background: #000; }
+@media (max-width: 720px) {
+  .proof-grid .testimonial-card.review-proof { flex: 1 1 100%; max-width: 430px; }
+}
+
