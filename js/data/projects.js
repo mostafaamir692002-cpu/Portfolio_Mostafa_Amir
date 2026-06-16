@@ -162,7 +162,7 @@
         ar: "متجر عطور معرّب بالكامل بيتكلم بنبرته الحقيقية — وموجود ويتلاقى في المكان اللي عملاؤه فيه، الخليج."
       },
       stats: [
-        { lbl: "SEO COVERAGE", val: "100%", desc: "Bilingual search-optimized metadata" },
+        { lbl: "SEO", val: "Gulf-built", desc: "Bilingual metadata structured around Gulf search" },
         { lbl: "BRAND VOICE", val: "Rebuilt", desc: "Gulf-grade Arabic copy, product-by-product" }
       ],
       link: "https://medieval-aloud.com"
@@ -320,8 +320,8 @@
         ar: "حولنا كامل سلسلة التوريد للرقمية. قللنا أخطاء الطلبات لـ صفر تقريباً، وسرّعنا تسليم الفواتير، وحسّنا استخدام مساحات المخازن بربط المخزون بالطلب الفعلي."
       },
       stats: [
-        { lbl: "INVOICING SPEED", val: "Instant", desc: "Auto-PDF on order confirm — zero manual entry" },
-        { lbl: "ORDER ACCURACY", val: "~100%", desc: "Contract-price validation eliminates entry errors" }
+        { lbl: "INVOICING", val: "Automated", desc: "Auto-PDF on order confirm — no manual entry" },
+        { lbl: "ORDER ACCURACY", val: "Validated", desc: "Contract-price checks remove manual entry errors" }
       ],
       link: "https://united-ffv.com"
     },
